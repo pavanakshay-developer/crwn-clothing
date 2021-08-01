@@ -1,6 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import {
+  auth,
+  createUserProfileDocument,
+} from "../src/firebase/firebase.utils";
+import { Switch, Redirect } from "react-router-dom";
 
 import "./App.css";
 
@@ -9,13 +14,8 @@ import ShopPage from "./pages/shop/shop.component";
 import Header from "./components/header/header.component";
 import SignInSignUpPage from "./pages/sign-in-sign-up/sign-in-sign-up.component";
 import { Route } from "react-router";
-import { Switch, Redirect } from "react-router-dom";
 import { setCurrentUser } from "./redux/user/user.actions";
 
-import {
-  auth,
-  createUserProfileDocument,
-} from "../src/firebase/firebase.utils";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import Checkout from "./pages/checkout/checkout.component";
 
